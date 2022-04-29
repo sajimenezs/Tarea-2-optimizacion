@@ -1,8 +1,10 @@
 import Pkg; Pkg.add("CDDLib")
-
 using LinearAlgebra
 using Polyhedra
 using CDDLib
+
+#=Dado un vector v y una lista de vectores W a la derecha,la siguiente función devuelve true si v está en el cono convexo de W y false en el caso contrario=#
+
 function Cono(v,init,args...) 
 n=length(init)
 A=init
@@ -30,6 +32,4 @@ else
  return true
 end
 end
-Cono([3.;-4.;2.],[1.;0.;0.],[0.;1.;0.],[0.;0.;1.])
-
 
